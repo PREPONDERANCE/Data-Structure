@@ -135,12 +135,14 @@ bool hasPathSum(Node* root, int sum){
 // Utitlity functions for task 8
 void printArray(int* arr, int N){
 	for(int i = 0; i != N; i++) printf("%d ", arr[i]);
-	putchar('\n');
 }
 
 void printPathUtil(Node* root, int* path, int i){
-	if( !root ){
+	if( !root ) return;
+	if( !root->left && !root->right ){
 		printArray(path, i);
+		printf("%d", root->data);
+		putchar('\n');
 		return;
 	}
 	
@@ -386,6 +388,8 @@ int main(int argc, char *argv[]) {
 	root = insert(root, 11);
 	root = insert(root, 17);
 	root = insert(root, 18);
+	
+	printPaths(root);
 	
 	printf("%d\n", deg0Count(root));
 	printf("%d\n", deg1Count(root));
