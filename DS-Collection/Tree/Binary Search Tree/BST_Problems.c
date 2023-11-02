@@ -391,9 +391,9 @@ int main(int argc, char *argv[]) {
 	
 	printPaths(root);
 	
-	printf("%d\n", deg0Count(root));
-	printf("%d\n", deg1Count(root));
-	printf("%d\n", deg2Count(root));
+//	printf("%d\n", deg0Count(root));
+//	printf("%d\n", deg1Count(root));
+//	printf("%d\n", deg2Count(root));
 
 	return 0;
 }
