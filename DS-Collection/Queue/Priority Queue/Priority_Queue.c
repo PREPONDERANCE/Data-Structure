@@ -74,7 +74,7 @@ Priority_Queue* createQueue(){
 	return pq;
 }
 
-void max_heapiry(Priority_Queue* pq, int N, int i){
+void max_heapify(Priority_Queue* pq, int N, int i){
 	int largest = i;
 	int left = 2*i+1, right = 2*i+2;
 	
@@ -83,7 +83,7 @@ void max_heapiry(Priority_Queue* pq, int N, int i){
 	
 	if( largest != i ){
 		swap(pq->arr, i, largest);
-		max_heapiry(pq, N, largest);
+		max_heapify(pq, N, largest);
 	}
 }
 
@@ -95,7 +95,7 @@ void insert(Priority_Queue* pq, int data){
 //	putchar('\n');
 	
 	for(int i = pq->size/2; i >= 0; i--)
-		max_heapiry(pq, pq->size, i);
+		max_heapify(pq, pq->size, i);
 }
 
 int extract(Priority_Queue* pq){
@@ -105,7 +105,7 @@ int extract(Priority_Queue* pq){
 	swap(pq->arr, 0, pq->size-1);
 	pq->size--;
 	
-	max_heapiry(pq, pq->size, 0);
+	max_heapify(pq, pq->size, 0);
 	
 	return temp;
 }

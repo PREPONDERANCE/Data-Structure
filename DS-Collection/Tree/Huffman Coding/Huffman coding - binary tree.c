@@ -79,7 +79,7 @@ minHeap* createTree(char* data, int* freq, int size){
 	minHeap* heap = createHeap(size);
 	for(int i = 0; i != size; i++)
 		insert(heap, createNode(data[i], freq[i]));
-	heap->size = size;
+
 	return heap;
 }
 
