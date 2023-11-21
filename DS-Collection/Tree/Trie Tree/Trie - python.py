@@ -40,7 +40,7 @@ class Trie:
 		return True
 	
 	
-testWords = ["apple", "ai", "a", "again", "banana", "brave"]
+testWords = ["br rice", "g rice", "a", "again", "banana", "brave"]
 t = Trie()
 for word in testWords:
 	t.insert(word)
